@@ -1,9 +1,16 @@
 const bank = owner => {
     balance = 0;
-    return amount => {
-        balance += amount;
-        return balance;
+    return {
+        deposite: amount => {
+            balance += amount;
+            return balance;
+        },
+        withdraw: amount => {
+            balance -= amount;
+            return balance;
+        }
     }
 }
 const ownBank = bank('sonuz');
-console.log(ownBank(500));
+console.log(ownBank.deposite(10000));
+console.log(ownBank.withdraw(9500));
